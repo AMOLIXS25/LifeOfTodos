@@ -1,6 +1,5 @@
 db.sqlite3
 myenv/
-manage.py
 .env
 media/
 dump.rdb
