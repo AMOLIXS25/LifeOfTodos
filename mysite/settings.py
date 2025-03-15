@@ -33,7 +33,9 @@ DEBUG = True
 
 SITE_ID = 4
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'lifeoftodos-production.up.railway.app'
+]
 
 
 # Application definition
