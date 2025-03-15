@@ -41,6 +41,10 @@ CSRF_TRUSTED_ORIGINS = [
     'lifeoftodos-production.up.railway.app',
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    'lifeoftodos-production.up.railway.app'
+]
+
 
 # Application definition
 
