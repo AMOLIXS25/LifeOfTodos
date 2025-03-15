@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for reminder in reminders %}
+        - {{ reminder.user }}
+        {{ reminder.reminder_at }} -
+        <br>
+    {% empty %}
+        <h3>Cette todo ne possède aucun rappel</h3>
+    {% endfor %}
+{% endblock %}

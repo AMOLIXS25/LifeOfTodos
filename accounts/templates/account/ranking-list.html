@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Classement</h3>
+    {% for user in users %}
+        {% include 'account/user_card_ranking.html' with user=user %}
+    {% endfor %}
+{% endblock %}

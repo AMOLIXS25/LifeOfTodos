@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Etes vous sûr de vouloir réinitialiser vos stats ?</h3>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <input class="green-button" type="submit" value="confirmer">
+        <a class="red-button" href="{% url 'home' %}">annuler</a>
+    </form>
+{% endblock %}

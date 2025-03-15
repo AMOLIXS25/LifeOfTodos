@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="d-flex flex-column gap-3" style="width: 40%;text-align: center;">
+        <h3>Créer une nouvelle todo</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="d-flex flex-column gap-3">
+                {{ form.title }}
+                <input class="green-button" type="submit" value="Nouvelle">
+            </div>
+        </form>
+    </div>    
+{% include 'display_toast_message.html' %}
+{% endblock %}

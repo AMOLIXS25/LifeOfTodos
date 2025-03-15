@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ profile.user }}
+{% endblock %}
+
+{% block content %}
+    <img class="avatar {% if profile.rank == 'MONK' %}monk-border{% endif %}" src="{{ profile.profil_pic.url }}" alt="">
+    <h2>{{ profile.user }}</h2>
+    <div style="text-align: center;">
+        <h5>Points : {{ profile.points }}</h5>
+        <h5>Nombre de tâches accomplies : {{ profile.number_of_completed_task }}</h5>
+        <h5>Rang : {{ profile.get_rank_display }}</h5>
+    </div>
+{% include 'display_toast_message.html' %}
+{% endblock %}

@@ -1,0 +1,28 @@
+<div class="d-flex align-items-center paginator-container {% if user.profil.get_display_mode_display == 'light' %}paginator-container-light{% endif %}" style="width: 100%;justify-content: space-between;">
+    {% if page.has_previous %}
+        <a class="green-button" href="?page={{ page.previous_page_number }}">Précédente</a>
+        {% if page.previous_page_number != 1 %}
+            <a href="?page=1">1</a>
+            <span>...</span>
+        {% endif %}
+        <a href="?page={{ page.previous_page_number }}">{{ page.previous_page_number }}</a>
+    {% else %}
+        <a class="green-button green-button-disabled">Précédente</a>
+        <span></span>
+    {% endif %}
+
+    <span>[{{ page.number }}]</span>
+
+    {% if page.has_next %}
+        <a href="?page={{ page.next_page_number }}">{{ page.next_page_number }}</a>
+        {% if page.next_page_number != page.paginator.num_pages %}
+            <span>...</span>
+            <a href="?page={{ page.paginator.num_pages }}">{{ page.paginator.num_pages }}</a>
+        {% endif %}
+        <a class="green-button" href="?page={{ page.next_page_number }}">Suivante</a>
+    {% else %}
+        <span></span>
+        <a class="green-button green-button-disabled">Suivante</a>
+    {% endif %}
+
+</div>

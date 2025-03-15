@@ -1,0 +1,31 @@
+{% if request.session.toast %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let toast = Toastify({
+                text:  "{{ request.session.toast.message }}",
+                duration: 3000, // Durée du toast en ms (5s)
+                gravity: "top",
+                position: "right",
+                escapeMarkup: false, // Permet d'afficher du HTML dans le texte
+                backgroundColor: "{%if request.session.toast.error %}#a02e3b{% else %}#03b209{% endif %}", // Rouge Bootstrap
+                className: "custom-toast",
+                stopOnFocus: true, // Pause si l'utilisateur survole
+                onClick: function () {
+                    location.reload(); // Recharge la page si on clique sur "Try again"
+                }
+            });
+
+            toast.showToast();
+
+            // Ajouter une progress bar
+            let progressBar = document.createElement("div");
+            progressBar.classList.add("toast-progress");
+            document.querySelector(".custom-toast").appendChild(progressBar);
+
+            // Animation de la progress bar
+            setTimeout(() => {
+                progressBar.style.width = "0%";
+            }, 50);
+        });
+    </script>
+{% endif %}

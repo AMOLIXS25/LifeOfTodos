@@ -1,0 +1,12 @@
+<div class="todo-card-container {% if user.profil.get_display_mode_display == 'light' %}todo-card-container-light{% endif %}">
+    <div class="d-flex flex-column">
+        <span>{{ todo.title }}</span>
+        <span>{{ todo.created_at }}</span>
+        <span>{{ todo.created_at|timesince }}</span>
+    </div>
+    <div>
+        <span><a href="{{ todo.get_absolute_edit_todo_url }}"><i class="fa-solid fa-pen-to-square"></i></a></span>
+        <span><a href="{% url 'todo:todo-list-reminders' todo.id %}"><i class="fa-solid fa-bell"></i></a></span>
+        <span><a href="{% url 'todo:delete-todo' todo.id %}"><i class="fa-solid fa-trash"></i></a></span>
+    </div>
+</div>

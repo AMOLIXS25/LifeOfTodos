@@ -1,0 +1,17 @@
+<nav class="navbar justify-content-center gap-5 mt-3 mb-4">
+    <a class="nav-item nav-item-home-navbar {% if request.resolver_match.url_name == 'home' %}actif{% endif %}" href="{% url 'home' %}">
+        <i class="fa-solid fa-circle-question"></i>
+        <span>Comment ça fonctione ?</span>
+    </a>
+    <a class="nav-item nav-item-home-navbar {% if request.resolver_match.url_name == 'contact' %}actif{% endif %}" href="{% url 'contact' %}">
+        <i class="fa-solid fa-phone">
+
+        </i> 
+        <span>Contact</span>
+    </a>
+    <a class="nav-item nav-item-home-navbar {% if request.resolver_match.namespace == 'account' and request.resolver_match.url_name == 'signup' %}actif{% endif %}" href="{% url 'account:signup' %}">
+        <i class="fa-solid fa-arrow-right-to-bracket">
+        </i> 
+        <span>Se connecter</span>
+    </a>
+</nav>

@@ -1,0 +1,17 @@
+db.sqlite3
+myenv/
+manage.py
+.env
+media/
+dump.rdb
+celerybeat-schedule
+client_secret_541622106370-a44bsb4e0bs5i0otaub0cqts5juf6ikt.apps.googleusercontent.com.json
+
+# Ignore les fichiers compilés Python
+__pycache__/
+*.pyc
+*.pyo
+
+
+# Ignore les fichiers de logs
+*.log

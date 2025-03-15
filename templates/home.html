@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Life of Todo's
+{% endblock %}
+
+{% block content %}
+    <h2 style="width: 60%;text-align: center;">Transforme tes objectifs en actions et tes actions en succès – Organise ta vie dès maintenant !</h2>
+    <a class="main-button" href="{% url 'account:signup' %}">Créer des todos gratuitement <i class="fa-solid fa-arrow-right"></i></a>
+{% include 'display_toast_message.html' %}
+{% endblock %}

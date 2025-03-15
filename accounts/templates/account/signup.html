@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load socialaccount %}
+
+
+{% block title %}
+    S'enregistrer
+{% endblock %}
+
+{% block content %}
+    <h2>Laissez moi entrer !</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ login_form.username }}
+        {{ login_form.password }}
+        <input class="green-button" type="submit" value="Se connecter">
+    </form>
+    <a class="main-button google-login-button" href="{% provider_login_url 'google' %}"><i class="fa-brands fa-google"></i> Continuer avec google</a>
+    <div>
+        <a style="color: white;" href="{% url 'account:register' %}">Pas de compte ?</a>
+        <a style="color: white;" href="{% url 'account:password_reset' %}">Mot de passe oublié ?</a>
+    </div>
+{% include 'display_toast_message.html' %}
+{% endblock %} 

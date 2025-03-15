@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Etes vous sur de vouloir supprimer {{ todo.title }} ?</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input class="green-button" style="width: 10rem;" type="submit" value="Confirmer">
+    </form>
+{% endblock %}

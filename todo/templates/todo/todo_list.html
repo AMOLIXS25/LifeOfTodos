@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="d-flex flex-column gap-3" style="width: 40%;text-align: center;">
+        {% include 'todo/search_bar_todo.html' %}
+        {% for todo in page_obj %}
+            {% include 'todo/todo_card.html' with todo=todo %}
+        {% empty %}
+            {% if q %}
+                    <p>Aucun résultat</p>
+                {% else %}
+                    <p>Vous n'avez pas encore de Todo's</p>   
+            {% endif %}
+        {% endfor %}
+        <a class="green-button" href="{% url 'todo:create-todo' %}">Nouvelle</a>
+        {% if page_obj %}
+            {% include 'paginator.html' with page=page_obj  %}
+        {% endif %}
+    </div>
+    {% include 'display_toast_message.html' %}
+    {% endblock %} 

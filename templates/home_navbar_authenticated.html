@@ -1,0 +1,22 @@
+<nav class="navbar justify-content-center gap-5 mt-3 mb-4">
+    <a class="nav-item {% if user.profil.get_display_mode_display == 'dark' %}nav-item-home-navbar{% else %}nav-item-home-navbar-light{% endif %} {% if request.resolver_match.namespace == 'todo' and request.resolver_match.url_name == 'todo-list' %}actif{% endif %}" href="{% url 'todo:todo-list' %}">
+        <i class="fa-solid fa-square-check"></i>
+        <span>Mes todo's</span>
+    </a>
+    <a class="nav-item {% if user.profil.get_display_mode_display == 'dark' %}nav-item-home-navbar{% else %}nav-item-home-navbar-light{% endif %} {% if request.resolver_match.namespace == 'account' and request.resolver_match.url_name == 'profile' %}actif{% endif %}" href="{% url 'account:profile' %}">
+        <i class="fa-solid fa-user"></i>
+        <span>Profile</span>
+    </a>
+    <a class="nav-item {% if user.profil.get_display_mode_display == 'dark' %}nav-item-home-navbar{% else %}nav-item-home-navbar-light{% endif %} {% if request.resolver_match.namespace == 'account' and request.resolver_match.url_name == 'account-settings' %}actif{% endif %}" href="{% url 'account:account-settings' %}">
+        <i class="fa-solid fa-gear"></i>
+        <span>Paramètres</span>
+    </a>
+    <a class="nav-item {% if user.profil.get_display_mode_display == 'dark' %}nav-item-home-navbar{% else %}nav-item-home-navbar-light{% endif %} {% if request.resolver_match.namespace == 'account' and request.resolver_match.url_name == 'ranking-list' %}actif{% endif %}" href="{% url 'account:ranking-list' %}">
+        <i class="fa-solid fa-trophy"></i>
+        <span>Classement</span>
+    </a>
+    <a class="nav-item {% if user.profil.get_display_mode_display == 'dark' %}nav-item-home-navbar{% else %}nav-item-home-navbar-light{% endif %}">
+        <span><img class="avatar-navbar" src="{{ user.profil.profil_pic.url }}" /></span>
+        <span>{{ user.username }}</span>
+    </a>
+</nav>

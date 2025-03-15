@@ -1,0 +1,11 @@
+<div class="user-card-container" style="width: 50%;">
+    <div class="d-flex flex-column">
+        <img class="{% if user.profil.rank == 'MONK' %}monk-border{% endif %}" alt="" src="{{ user.profil.profil_pic.url }}">
+        <span>{{ user.username }}</span>
+        <span class="discret-span">Inscris depuis {{ user.date_joined|timesince }}</span>
+    </div>
+    <div class="d-flex flex-column">
+        <span class="discret-span">Rank : {{ user.profil.get_rank_display }}</span>
+        <span class="discret-span">Points : {{ user.profil.points }}</span>
+    </div>    
+</div>

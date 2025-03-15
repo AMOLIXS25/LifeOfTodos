@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="text-align: left; width: 50%;">
+        <div style="margin-bottom: 3em;">
+            <h3>Apparence</h3>
+            <form action="{% url 'account:change-display-mode' %}" method="POST">
+                {% csrf_token %}
+                {{ display_mode_form.as_p }}
+                <input class="green-button" type="submit">
+            </form>
+        </div>
+        <div>
+            <h3>Détails du Profile</h3>
+            <img style="margin-bottom: 5px;" class="avatar" src="{{ user.profil.profil_pic.url }}" alt="">
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ user_form.username }}
+                <input style="margin-top: 1em;margin-bottom: 1em;" class="green-button" value="Sauvegarder" type="submit" /> 
+                <a class="red-button" href="{% url 'account:logout' %}">Déconnexion</a>
+            </form>
+        </div>
+        <div style="color: #f87171;margin-top: 3em;">
+            <h3>Zone danger</h3>
+            <a class="red-button" href="{% url 'account:stats-reset' %}">Réinitialiser mes stats</a>
+        </div>
+        <hr style="color: #f87171">
+        <p style="color: #f87171">La suppression de votre compte vous déconnectera et supprimera toutes vos données de façon permanente. Vous devrez créer un nouveau compte et repartir de zéro si vous décidez de revenir.</p>
+        <form action="{% url 'account:delete' %}" method="POST">
+            {% csrf_token %}
+            <input class="form-input-custom" type="text" name="username" placeholder="{{ user.username }}">
+            <input class="red-button mt-2" type="submit" value="Supprimer mon compte" />
+        </form>
+    </div> 
+{% include 'display_toast_message.html' %}
+{% endblock %}
