@@ -16,7 +16,7 @@
         <span>Classement</span>
     </a>
     <a class="nav-item {% if user.profil.get_display_mode_display == 'dark' %}nav-item-home-navbar{% else %}nav-item-home-navbar-light{% endif %}">
-        <span><img class="avatar-navbar" src="{{ user.profil.profil_pic.url }}" /></span>
+        <span><img class="avatar-navbar" src="{{ user.profil.profil_pic }}" /></span>
         <span>{{ user.username }}</span>
     </a>
 </nav>

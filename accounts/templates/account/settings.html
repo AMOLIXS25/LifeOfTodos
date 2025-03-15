@@ -12,7 +12,7 @@
         </div>
         <div>
             <h3>Détails du Profile</h3>
-            <img style="margin-bottom: 5px;" class="avatar" src="{{ user.profil.profil_pic.url }}" alt="">
+            <img style="margin-bottom: 5px;" class="avatar" src="{{ user.profil.profil_pic }}" alt="">
             <form method="POST" action="">
                 {% csrf_token %}
                 {{ user_form.username }}

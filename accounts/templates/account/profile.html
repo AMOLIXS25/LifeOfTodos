@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-    <img class="avatar {% if profile.rank == 'MONK' %}monk-border{% endif %}" src="{{ profile.profil_pic.url }}" alt="">
+    <img class="avatar {% if profile.rank == 'MONK' %}monk-border{% endif %}" src="{{ profile.profil_pic }}" alt="">
     <h2>{{ profile.user }}</h2>
     <div style="text-align: center;">
         <h5>Points : {{ profile.points }}</h5>

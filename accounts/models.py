@@ -21,7 +21,7 @@ class Profile(models.Model):
         LIGHT = 'LG', 'light'
 
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profil')
-    profil_pic = models.ImageField(default='default_avatar.png',blank=True)
+    profil_pic = models.URLField(default='https://i.imgur.com/KiiziZ1.png',blank=True)
     number_of_completed_task = models.IntegerField(default=0)
     points = models.IntegerField(default=0)
     rank = models.CharField(max_length=5, choices=Rank.choices, default=Rank.NOVICE)
