@@ -37,6 +37,10 @@ ALLOWED_HOSTS = [
     'lifeoftodos-production.up.railway.app'
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'lifeoftodos-production.up.railway.app',
+]
+
 
 # Application definition
 
