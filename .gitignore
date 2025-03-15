@@ -1,7 +1,6 @@
 db.sqlite3
 myenv/
 .env
-media/
 dump.rdb
 celerybeat-schedule
 client_secret_541622106370-a44bsb4e0bs5i0otaub0cqts5juf6ikt.apps.googleusercontent.com.json

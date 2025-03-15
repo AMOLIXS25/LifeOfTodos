@@ -31,7 +31,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-SITE_ID = 4
+SITE_ID = 5
 
 ALLOWED_HOSTS = [
     'lifeoftodos-production.up.railway.app'
@@ -200,7 +200,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
